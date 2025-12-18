@@ -541,7 +541,7 @@ def _fire(marking, places_order, tname):
         new[idx] += w
     return tuple(new)
 
-def build_state_graph(max_states=200):
+def build_state_graph(max_states=50):
     places_order = _get_places_order()
     transitions_order = _get_transitions_order()
 
@@ -577,7 +577,7 @@ def build_state_graph(max_states=200):
     return places_order, states, edges
 
 def show_state_graph():
-    res = build_state_graph(max_states=200)
+    res = build_state_graph(max_states=50)
     if res is None:
         return
 
