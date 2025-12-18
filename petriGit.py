@@ -456,6 +456,8 @@ def exporter_json():
         filetypes=[("Fichier JSON", "*.json")],
         title="Exporter le réseau de Petri"
     )
+    if not fichier:
+        return
     messagebox.showinfo("Export réussi", "Le réseau a été exporté en JSON.")
 
 
