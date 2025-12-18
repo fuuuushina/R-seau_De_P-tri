@@ -456,9 +456,6 @@ def exporter_json():
         filetypes=[("Fichier JSON", "*.json")],
         title="Exporter le réseau de Petri"
     )
-    if not fichier: return
-    with open(fichier, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
     messagebox.showinfo("Export réussi", "Le réseau a été exporté en JSON.")
 
 
@@ -768,6 +765,7 @@ dfs_button = Button(controls, text="DFS", command=lambda: dfs_algo(selected_node
 bfs_button = Button(controls, text="BFS", command=lambda: bfs_algo(selected_node)).pack(pady=5)
 
 #bontons export
+Label(controls, text="Exporter le graph", bg="#e4dde9", font=("Montserrat", 13)).pack(pady=20)
 Button(controls,text="Télécharger le réseau (JSON)", command=exporter_json).pack(pady=10)
 
 #bouton graphe d'état
